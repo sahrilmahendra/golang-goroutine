@@ -59,4 +59,5 @@ func TestDeadlock(t *testing.T) {
 
 	fmt.Println("user", user1.Name, "balance", user1.Balance)
 	fmt.Println("user", user2.Name, "balance", user2.Balance)
+
 }
