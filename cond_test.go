@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"sync"
 	"testing"
+	"time"
 )
 
 var locker = &sync.Mutex{}
@@ -32,7 +33,10 @@ func TestCondition(t *testing.T) {
 	// 		cond.Signal()
 	// 	}
 	// }()
-	cond.Broadcast()
+	go func() {
+		time.Sleep(1 * time.Second)
+		cond.Broadcast()
+	}()
 
 	group.Wait()
 }
